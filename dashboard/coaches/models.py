@@ -4,18 +4,31 @@ import uuid
 
 class Coach(models.Model):
 
-""" Coach Model
+    """ Coach Model
 
-Proxy model that extends the base data with other information """
+    Proxy model that extends the base data with other information """
 
-    coach = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    
+    #coach = models.OneToOneField(User, on_delete=models.CASCADE, default=None)
     coach_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    role = models.CharField(max_length=100)
-    description = models.CharField(max_length=255)
-    email = models.EmailField(max_length=50)
-    phone = models.CharField(max_length=50)
-    location = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, blank=True)
+    last_name = models.CharField(max_length=50, blank=True)
+    email = models.EmailField(max_length=50, blank=True)
+    role_choice = {
+        ('Tech Coach', 'Tech Coach'),
+        ('Talent Placement Coach', 'Talent Placement Coach'),
+        ('Academic Coach', 'Academic Coach')
+    }
+    role = models.CharField(max_length=100, choices=role_choice)
+    description = models.CharField(max_length=255, blank=True)
+    phone = models.CharField(max_length=50, blank=True)
+    location = models.CharField(max_length=50, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'coach'
+        verbose_name_plural = 'coaches'
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.name

@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<style>
+    .center {
+      margin: auto;
+      width: 60%;
+      padding: 10px;
+    }
+   
+    .text-center {
+      text-align: center;
+      margin: auto;
+      width: 60%;
+      padding: 10px;
+    }
+    
+    .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    }
+</style>
+
+<div class="imgcontainer">
+    <img src="https://avatars.githubusercontent.com/u/2975064?s=200&v=4" alt="Avatar" class="avatar">
+</div>
+<div class="center">
+<h1 style="text-align:center;">¡Bienvenido, coach!</h1>
+<div class="text-center">
+    <a class="btn btn-primary" href=" {% url 'Login' %} ">Accede</a>
+</div>
+</div>
+{% endblock %}

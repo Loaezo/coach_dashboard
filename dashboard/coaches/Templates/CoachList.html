@@ -2,6 +2,35 @@
 
 {% block content %}
 
-<h1>¡Bienvenido, coach!</h1>
-
+<h1 style="text-align:center;">¡Bienvenido, coach!</h1>
+<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Trayectoria</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Ubicación</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for coach in coaches %}
+      <tr>
+        <th scope="row">{{ coach.id }}</th>
+        <th scope="row">{{ coach.name }}</th>
+        <th scope="row">{{ coach.last_name }}</th>
+        <th scope="row">{{ coach.email }}</th>
+        <th scope="row">{{ coach.role }}</th>
+        <th scope="row">{{ coach.description }}</th>
+        <th scope="row">{{ coach.phone }}</th>
+        <th scope="row">{{ coach.location }}</th>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
 {% endblock %}

@@ -71,19 +71,24 @@ span.psw {
 </style>
 
 <h2></h2>
+{% if error %}
+  <pstyle="color:red;"> {{ error }}</p>
+{% endif %}
 
-<form action="/action_page.php" method="post">
+<form action="{% url 'ListCoaches' %}" method="POST">
+  {% csrf_token %}
+  
   <div class="imgcontainer">
     <img src="https://avatars.githubusercontent.com/u/2975064?s=200&v=4" alt="Avatar" class="avatar">
   </div>
-
+  
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
     <br>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
         
     <button type="submit">Login</button>
 </div>

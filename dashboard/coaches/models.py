@@ -8,8 +8,8 @@ class Coach(models.Model):
 
     Proxy model that extends the base data with other information """
 
-    #coach = models.OneToOneField(User, on_delete=models.CASCADE, default=None)
-    coach_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    coach = models.OneToOneField(User, on_delete=models.CASCADE, default=None)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
     email = models.EmailField(max_length=50, blank=True)
@@ -31,4 +31,4 @@ class Coach(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return self.name
+        return self.coach.username

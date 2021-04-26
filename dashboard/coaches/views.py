@@ -2,11 +2,9 @@ from django.shortcuts import render, redirect
 from coaches.models import Coach
 from django.template.loader import get_template
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-
-# class HomeView():
 # @login_required
 def login_view(request):
     if request.method == 'POST':
@@ -29,6 +27,3 @@ def list_coaches(request):
 def home(request):
     return render(request,
         'home.html') 
-
-       # template = get_template('login_view.html')
-        # return render(template.render())

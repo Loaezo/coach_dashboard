@@ -70,12 +70,12 @@ span.psw {
 }
 </style>
 
-<h2></h2>
+<h2>
 {% if error %}
   <pstyle="color:red;"> {{ error }}</p>
 {% endif %}
-
-<form action="{% url 'ListCoaches' %}" method="POST">
+</h2>
+<form action="" method="POST">
   {% csrf_token %}
   
   <div class="imgcontainer">

@@ -10,4 +10,4 @@ Django (version 3.11.0) was the framework used to develop the app, along with Bo
 
 This app can be improved by adding options to store images and, if it grows, connecting it to another database engine.
 
-To run this app, you can do it inside a virtual environment. Once active, you need to install Django 3.11.0 and run the server using the Command Line Interface and running the command "python manage.py runserver" if you are in Windows and "python3 manage.py runserver" in Linux and Mac. A local server will initialize in the local host "127.0.0.1:8000". Open a web browser and you will be ready to go.
+To run this app, you can do it inside a virtual environment. Once active, you need to install Django 3.11.0 and clone the repository in the same folder. After that, you will be able to run the server using the Command Line Interface and running the command "python manage.py runserver" if you are in Windows and "python3 manage.py runserver" in Linux and Mac. A local server will initialize in the local host "127.0.0.1:8000". Open a web browser and you will be ready to go.
